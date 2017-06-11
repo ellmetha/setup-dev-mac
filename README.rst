@@ -160,5 +160,5 @@ Install basic Atom packages and themes
 .. code-block:: shell
 
   $ apm install atom-sort-projects block-comment busy-signal editorconfig highlight-selected \
-    intentions language-restructuredtext linter linter-eslint linter-flake8 linter-ui-default
+    intentions language-restructuredtext linter linter-eslint linter-flake8 linter-ui-default \
     monokai react
