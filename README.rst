@@ -1,6 +1,9 @@
 Mac OS X development setup
 ##########################
 
+.. contents:: Table of Contents
+    :local:
+
 Step 1: check for system updates
 ================================
 
@@ -9,88 +12,98 @@ Go to: **Apple Icon -> About this Mac -> Software updates**
 Step 2: install Homebrew and Homebrew-Cask
 ==========================================
 
+**Homebrew** is a package manager for Mac OS. **Homebrew-Cask** extends Homebrew and brings support
+for packages allowing to install macOS applications and large binaries.
+
 .. code-block:: shell
 
   $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   $ brew tap caskroom/cask
 
-Step 3: install packages using brew
+Step 3: install basic packages using ``brew`` and ``brew cask``
+===============================================================
+
+.. code-block:: shell
+
+  $ brew install bash-completion gdbm gettext gnutls go gnupg iproute2mac jpeg jpegoptim libgcrypt \
+    libffi libksba libtasn1 libusb nano ncurses node openssl sqlite
+  $ brew cask install etcher firefox gimp google-chrome limechat skype vlc
+
+Step 4: install iTerm2
+======================
+
+.. code-block:: shell
+
+  $ brew cask install iterm2
+
+Preference modifications:
+
+* Go to **iTerm2 -> Preferences -> General** and uncheck **Confirm "Quit iTerm2 (Cmd+Q)" command**
+  under the section Closing.
+* Go to **iTerm2 -> Preferences -> Profiles -> Default -> Text** and ensure that font is set to
+  **13pt Menlo Regular**
+
+Step 5: prepare Workspace directory
 ===================================
 
 .. code-block:: shell
 
-  $ brew list
-  adns
-  bash-completion
-  gdbm
-  gettext
-  git
-  gmp
-  gnutls
-  go
-  gnupg
-  icu4c
-  iproute2mac
-  jpeg
-  jpegoptim
-  libassuan	libgpg-error
-  libgcrypt
-  libffi
-  libksba
-  libtasn1
-  libunistring
-  libusb
-  nano
-  ncurses
-  nettle
-  node
-  npth
-  openssl
-  p11-kit
-  pinentry
-  python
-  python3
-  readline
-  sqlite
-  xz
-  $ brew cask list
-  atom
-  etcher
-  firefox
-  gimp
-  google-chrome
-  iterm2
-  libreoffice
-  limechat
-  meld
-  skype
-  vlc
+  $ mkdir ~/Documents/Workspace
 
-Step 4: install common Python packages & tools
+Step 6: set up Python and related dependencies
 ==============================================
 
-.. code-block:: shell
-
-  $ pip install pipenv virtualenvwrapper
-
-Step 5: set up bash
-===================
+Install Python
+--------------
 
 .. code-block:: shell
 
-  $ mkdir ~/Documents/Workspace
+  $ brew install python python3
+
+Install basic Python packages & tools
+-------------------------------------
+
+.. code-block:: shell
+
+  $ pip install cryptography Pillow pipenv virtualenvwrapper
+
+Prepare virtualenvs directory
+-----------------------------
+
+.. code-block:: shell
+
+  $ mkdir ~/.virtualenvs
+
+Step 7: set up Git
+==================
+
+Install Git
+-----------
+
+.. code-block:: shell
+
+  $ brew install git
+
+Configure Git completion
+------------------------
+
+.. code-block:: shell
+
   $ curl "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash" --silent --output "$HOME/.git-completion.bash"
 
-.bash_aliases
--------------
+Step 8: set up bash
+===================
+
+Create ``.bash_aliases`` file
+-----------------------------
 
 .. code-block:: shell
 
   alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
   alias cdworkspace='cd ~/Documents/Workspace'
 
-.bash_profile
--------------
+Create ``.bash_profile`` file
+-----------------------------
 
 .. code-block:: shell
 
@@ -113,3 +126,6 @@ Step 5: set up bash
   export WORKON_HOME=$HOME/.virtualenvs
   export PROJECT_HOME=$HOME/Documents/Workspace
   source /usr/local/bin/virtualenvwrapper.sh
+
+Step 8: set up Atom editor
+==========================
