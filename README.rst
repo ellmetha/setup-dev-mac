@@ -27,7 +27,7 @@ Step 3: install basic packages using ``brew`` and ``brew cask``
 
   $ brew install bash-completion gdbm gettext gnutls go gnupg iproute2mac jpeg jpegoptim libgcrypt \
     libffi libksba libtasn1 libusb nano ncurses openssl sqlite
-  $ brew cask install etcher firefox gimp google-chrome limechat skype vlc
+  $ brew cask install etcher firefox gimp google-chrome limechat skype virtualbox vlc
 
 Step 4: install iTerm2
 ======================
@@ -162,3 +162,41 @@ Install basic Atom packages and themes
   $ apm install atom-sort-projects block-comment busy-signal editorconfig highlight-selected \
     intentions language-restructuredtext linter linter-eslint linter-flake8 linter-ui-default \
     monokai react
+
+Step 11: set up Docker
+======================
+
+Install Docker and docker-machine
+---------------------------------
+
+.. code-block:: shell
+
+  $ brew install docker docker-machine
+  $ brew cask install docker-toolbox
+
+Create a local Docker machine
+-----------------------------
+
+.. code-block:: shell
+
+  $ docker-machine create main
+  $ eval $(docker-machine env main)
+
+Step 12: set up PostgreSQL
+==========================
+
+Install PostgreSQL
+------------------
+
+.. code-block:: shell
+
+  $ brew install postgresql
+  $ brew services start postgresql
+
+First login to PostgreSQL
+-------------------------
+
+.. code-block:: shell
+
+  $ createdb `whoami`
+  $ psql
