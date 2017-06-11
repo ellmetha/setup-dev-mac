@@ -12,7 +12,7 @@ Go to: **Apple Icon -> About this Mac -> Software updates**
 Step 2: install Homebrew and Homebrew-Cask
 ==========================================
 
-**Homebrew** is a package manager for Mac OS. **Homebrew-Cask** extends Homebrew and brings support
+**Homebrew** is a package manager for macOS. **Homebrew-Cask** extends Homebrew and brings support
 for packages allowing to install macOS applications and large binaries.
 
 .. code-block:: shell
@@ -26,7 +26,7 @@ Step 3: install basic packages using ``brew`` and ``brew cask``
 .. code-block:: shell
 
   $ brew install bash-completion gdbm gettext gnutls go gnupg iproute2mac jpeg jpegoptim libgcrypt \
-    libffi libksba libtasn1 libusb nano ncurses node openssl sqlite
+    libffi libksba libtasn1 libusb nano ncurses openssl sqlite
   $ brew cask install etcher firefox gimp google-chrome limechat skype vlc
 
 Step 4: install iTerm2
@@ -43,8 +43,8 @@ Preference modifications:
 * Go to **iTerm2 -> Preferences -> Profiles -> Default -> Text** and ensure that font is set to
   **13pt Menlo Regular**
 
-Step 5: prepare Workspace directory
-===================================
+Step 5: prepare the ``Workspace`` directory
+===========================================
 
 .. code-block:: shell
 
@@ -67,14 +67,31 @@ Install basic Python packages & tools
 
   $ pip install cryptography Pillow pipenv virtualenvwrapper
 
-Prepare virtualenvs directory
------------------------------
+Prepare the ``.virtualenvs`` directory
+--------------------------------------
 
 .. code-block:: shell
 
   $ mkdir ~/.virtualenvs
 
-Step 7: set up Git
+Step 7: set up NodeJS and related dependencies
+==============================================
+
+Install NodeJS
+--------------
+
+.. code-block:: shell
+
+  $ brew install node
+
+Install global NPM packages
+---------------------------
+
+.. code-block:: shell
+
+  $ npm install -g eslint
+
+Step 8: set up Git
 ==================
 
 Install Git
@@ -91,19 +108,19 @@ Configure Git completion
 
   $ curl "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash" --silent --output "$HOME/.git-completion.bash"
 
-Step 8: set up bash
+Step 9: set up bash
 ===================
 
-Create ``.bash_aliases`` file
------------------------------
+Create the ``.bash_aliases`` file
+---------------------------------
 
 .. code-block:: shell
 
   alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
   alias cdworkspace='cd ~/Documents/Workspace'
 
-Create ``.bash_profile`` file
------------------------------
+Create the ``.bash_profile`` file
+---------------------------------
 
 .. code-block:: shell
 
@@ -127,5 +144,21 @@ Create ``.bash_profile`` file
   export PROJECT_HOME=$HOME/Documents/Workspace
   source /usr/local/bin/virtualenvwrapper.sh
 
-Step 8: set up Atom editor
+Step 10: set up Atom editor
 ==========================
+
+Install Atom editor
+-------------------
+
+.. code-block:: shell
+
+  $ brew cask install atom
+
+Install basic Atom packages and themes
+--------------------------------------
+
+.. code-block:: shell
+
+  $ apm install atom-sort-projects block-comment busy-signal editorconfig highlight-selected \
+    intentions language-restructuredtext linter linter-eslint linter-flake8 linter-ui-default
+    monokai react
