@@ -89,7 +89,7 @@ Install global NPM packages
 
 .. code-block:: shell
 
-  $ npm install -g eslint
+  $ npm install -g eslint npm-check-updates
 
 Step 8: set up Git
 ==================
