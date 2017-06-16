@@ -65,7 +65,7 @@ Install basic Python packages & tools
 
 .. code-block:: shell
 
-  $ pip install cryptography Pillow pipenv virtualenvwrapper
+  $ pip install cookiecutter cryptography Pillow pipenv virtualenvwrapper
 
 Prepare the ``.virtualenvs`` directory
 --------------------------------------
