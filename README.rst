@@ -27,7 +27,8 @@ Step 3: install basic packages using ``brew`` and ``brew cask``
 
   $ brew install bash-completion gdbm gettext gnutls go gnupg iproute2mac jpeg jpegoptim libgcrypt \
     libffi libksba libtasn1 libusb nano ncurses openssl sqlite
-  $ brew cask install etcher firefox gimp google-chrome keybase limechat slack skype virtualbox vlc
+  $ brew cask install etcher firefox gimp google-chrome keybase limechat slack spotify skype \
+    virtualbox vlc
 
 Step 4: install iTerm2
 ======================
