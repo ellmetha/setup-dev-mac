@@ -26,7 +26,7 @@ Step 3: install basic packages using ``brew`` and ``brew cask``
 .. code-block:: shell
 
   $ brew install bash-completion gdbm gettext gnutls go gnupg iproute2mac jpeg jpegoptim libgcrypt \
-    libffi libksba libtasn1 libusb nano ncurses openssl sqlite
+    libffi libksba libtasn1 libusb nano ncurses openssl sqlite wget
   $ brew cask install etcher firefox gimp google-chrome keybase limechat slack mattermost spotify \
     skype virtualbox vlc
 
