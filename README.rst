@@ -75,8 +75,8 @@ Prepare the ``.virtualenvs`` directory
 
   $ mkdir ~/.virtualenvs
 
-Step 7 setup up Ruby and related dependencies
-=============================================
+Step 7 set up Ruby and related dependencies
+===========================================
 
 Install RVM
 -----------
