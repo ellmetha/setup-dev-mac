@@ -75,7 +75,27 @@ Prepare the ``.virtualenvs`` directory
 
   $ mkdir ~/.virtualenvs
 
-Step 7: set up NodeJS and related dependencies
+Step 7 setup up Ruby and related dependencies
+=============================================
+
+Install RVM
+-----------
+
+.. code-block:: shell
+
+  $ gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+  $ \curl -sSL https://get.rvm.io | bash -s stable
+  $ rvm install --latest
+  $ rvm use <ruby_version> --default
+
+Install basic Ruby packages and tools
+-------------------------------------
+
+.. code-block:: shell
+
+  $ gem install pry
+
+Step 8: set up NodeJS and related dependencies
 ==============================================
 
 Install NodeJS
@@ -92,7 +112,7 @@ Install global NPM packages
 
   $ npm install -g eslint npm-check-updates
 
-Step 8: set up Git
+Step 9: set up Git
 ==================
 
 Install Git
@@ -109,8 +129,8 @@ Configure Git completion
 
   $ curl "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash" --silent --output "$HOME/.git-completion.bash"
 
-Step 9: set up bash
-===================
+Step 10: set up bash
+====================
 
 Create the ``.bash_aliases`` file
 ---------------------------------
@@ -145,8 +165,8 @@ Create the ``.bash_profile`` file
   export PROJECT_HOME=$HOME/Documents/Workspace
   source /usr/local/bin/virtualenvwrapper.sh
 
-Step 10: set up Atom editor
-==========================
+Step 11: set up Atom editor
+===========================
 
 Install Atom editor
 -------------------
@@ -164,14 +184,14 @@ Install basic Atom packages and themes
     intentions language-restructuredtext linter linter-eslint linter-flake8 linter-ui-default \
     monokai react
 
-Step 11: set up Docker
+Step 12: set up Docker
 ======================
 
 .. code-block:: shell
 
   $ brew cask install docker
 
-Step 12: set up PostgreSQL
+Step 13: set up PostgreSQL
 ==========================
 
 Install PostgreSQL
