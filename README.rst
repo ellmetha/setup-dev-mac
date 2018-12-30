@@ -88,7 +88,7 @@ Install rbenv
   $ curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
   $ echo bundler >> ~/.rbenv/default-gems
   $ CFLAGS=-O3 rbenv install 2.5.3
-  $ rbenv global 2..5.3
+  $ rbenv global 2.5.3
 
 Install basic Ruby packages and tools
 -------------------------------------
