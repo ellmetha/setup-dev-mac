@@ -78,22 +78,24 @@ Prepare the ``.virtualenvs`` directory
 Step 7 set up Ruby and related dependencies
 ===========================================
 
-Install RVM
------------
+Install rbenv
+-------------
 
 .. code-block:: shell
 
-  $ gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-  $ \curl -sSL https://get.rvm.io | bash -s stable
-  $ rvm install --latest
-  $ rvm use <ruby_version> --default
+  $ brew install rbenv rbenv-default-gems ruby-build
+  $ eval "$(rbenv init -)"
+  $ curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
+  $ echo bundler >> ~/.rbenv/default-gems
+  $ CFLAGS=-O3 rbenv install 2.5.3
+  $ rbenv global 2..5.3
 
 Install basic Ruby packages and tools
 -------------------------------------
 
 .. code-block:: shell
 
-  $ gem install pry
+  $ gem install pry rails
 
 Step 8: set up NodeJS and related dependencies
 ==============================================
@@ -164,6 +166,10 @@ Create the ``.bash_profile`` file
   export WORKON_HOME=$HOME/.virtualenvs
   export PROJECT_HOME=$HOME/Documents/Workspace
   source /usr/local/bin/virtualenvwrapper.sh
+
+  # rbenv
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
 
 Step 11: set up Atom editor
 ===========================
