@@ -18,9 +18,34 @@ for packages allowing to install macOS applications and large binaries.
 .. code-block:: shell
 
   $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  $ brew tap caskroom/cask
+  $ brew tap homebrew/cask
 
-Step 3: install basic packages using ``brew`` and ``brew cask``
+Step 3: install iTerm2
+======================
+
+.. code-block:: shell
+
+  $ brew cask install iterm2
+
+Preference modifications:
+
+* Go to **iTerm2 -> Preferences -> General -> Closing** and uncheck **Confirm "Quit iTerm2 (Cmd+Q)" command**
+  under the section Closing.
+* Go to **iTerm2 -> Preferences -> Profiles -> Default -> Text** and ensure that font is set to
+  **13pt Menlo Regular**
+* Download and install an iTerm theme (https://github.com/mbadolato/iTerm2-Color-Schemes)
+
+Step 4: install the Fish shell
+==============================
+
+.. code-block:: shell
+
+  $ brew install fish
+  $ curl -L https://get.oh-my.fish | fish
+  $ echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
+  $ chsh -s /usr/local/bin/fish
+
+Step 5: install basic packages using ``brew`` and ``brew cask``
 ===============================================================
 
 .. code-block:: shell
@@ -30,28 +55,14 @@ Step 3: install basic packages using ``brew`` and ``brew cask``
   $ brew cask install etcher firefox gimp google-chrome keybase limechat slack mattermost spotify \
     skype virtualbox vlc
 
-Step 4: install iTerm2
-======================
-
-.. code-block:: shell
-
-  $ brew cask install iterm2
-
-Preference modifications:
-
-* Go to **iTerm2 -> Preferences -> General** and uncheck **Confirm "Quit iTerm2 (Cmd+Q)" command**
-  under the section Closing.
-* Go to **iTerm2 -> Preferences -> Profiles -> Default -> Text** and ensure that font is set to
-  **13pt Menlo Regular**
-
-Step 5: prepare the ``Workspace`` directory
+Step 6: prepare the ``Workspace`` directory
 ===========================================
 
 .. code-block:: shell
 
   $ mkdir ~/Documents/Workspace
 
-Step 6: set up Python and related dependencies
+Step 7: set up Python and related dependencies
 ==============================================
 
 Install Python
@@ -75,8 +86,8 @@ Prepare the ``.virtualenvs`` directory
 
   $ mkdir ~/.virtualenvs
 
-Step 7 set up Ruby and related dependencies
-===========================================
+Step 8: set up Ruby and related dependencies
+===========================================+
 
 Install rbenv
 -------------
@@ -97,7 +108,7 @@ Install basic Ruby packages and tools
 
   $ gem install pry rails
 
-Step 8: set up NodeJS and related dependencies
+Step 9: set up NodeJS and related dependencies
 ==============================================
 
 Install NodeJS
@@ -114,8 +125,8 @@ Install global NPM packages
 
   $ npm install -g eslint npm-check-updates
 
-Step 9: set up Git
-==================
+Step 10: set up Git
+==================+
 
 Install Git
 -----------
@@ -131,7 +142,7 @@ Configure Git completion
 
   $ curl "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash" --silent --output "$HOME/.git-completion.bash"
 
-Step 10: set up bash
+Step 11: set up bash
 ====================
 
 Create the ``.bash_aliases`` file
@@ -171,7 +182,7 @@ Create the ``.bash_profile`` file
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
 
-Step 11: set up Atom editor
+Step 12: set up Atom editor
 ===========================
 
 Install Atom editor
@@ -190,14 +201,14 @@ Install basic Atom packages and themes
     intentions language-restructuredtext linter linter-eslint linter-flake8 linter-ui-default \
     monokai react
 
-Step 12: set up Docker
+Step 13: set up Docker
 ======================
 
 .. code-block:: shell
 
   $ brew cask install docker
 
-Step 13: set up PostgreSQL
+Step 14: set up PostgreSQL
 ==========================
 
 Install PostgreSQL
