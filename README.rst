@@ -31,6 +31,8 @@ Preference modifications:
 
 * Go to **iTerm2 -> Preferences -> General -> Closing** and uncheck **Confirm "Quit iTerm2 (Cmd+Q)" command**
   under the section Closing.
+* Go to **iTerm2 -> Preferences -> Profiles -> Default -> General** and check **Reuse previous session's directory**
+  **13pt Menlo Regular**
 * Go to **iTerm2 -> Preferences -> Profiles -> Default -> Text** and ensure that font is set to
   **13pt Menlo Regular**
 * Download and install an iTerm theme (https://github.com/mbadolato/iTerm2-Color-Schemes)
