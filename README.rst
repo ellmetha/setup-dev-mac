@@ -88,7 +88,7 @@ Prepare the ``.virtualenvs`` directory
   $ mkdir ~/.virtualenvs
 
 Step 8: set up Ruby and related dependencies
-===========================================+
+============================================
 
 Install rbenv
 -------------
