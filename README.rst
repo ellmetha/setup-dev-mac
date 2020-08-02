@@ -96,7 +96,7 @@ Install rbenv
 .. code-block:: shell
 
   $ brew install rbenv rbenv-default-gems ruby-build
-  $ eval "$(rbenv init -)"
+  $ rbenv init - | source
   $ curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
   $ echo bundler >> ~/.rbenv/default-gems
   $ CFLAGS=-O3 rbenv install 2.5.3
